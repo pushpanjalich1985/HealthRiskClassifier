@@ -76,6 +76,7 @@ def generate_health_data(n_samples=1000, seed=42):
     risk_score = np.zeros(n_samples, dtype=int)
 
     # Each condition below is a boolean array — True(1) or False(0) per patient
+    'vectorized operations let us add these directly to the risk_score array'
     risk_score += (bmi > 30).astype(int)               # obese
     risk_score += (blood_pressure > 140).astype(int)   # hypertension
     risk_score += (cholesterol > 240).astype(int)      # high cholesterol
